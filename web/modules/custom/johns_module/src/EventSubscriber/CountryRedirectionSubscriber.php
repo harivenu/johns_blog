@@ -21,7 +21,7 @@ class CountryRedirectionSubscriber implements EventSubscriberInterface {
     global $base_url;
     $ip = $event->getRequest()->getClientIp();
 
-    if(filter_var($ip, FILTER_VALIDATE_IP) && ($ip != '::1' || $ip != '127.0.0.1')) {
+    if(filter_var($ip, FILTER_VALIDATE_IP) && ($ip != '::1' || $ip != '127.0.0.1') && \Drupal::service('path.matcher')->isFrontPage()) {
       // Use JSON encoded string and converts 
       // it into a PHP variable 
       $ipdat = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip));
