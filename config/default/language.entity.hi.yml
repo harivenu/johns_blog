@@ -1,0 +1,9 @@
+uuid: bed21072-0a35-42bd-94c6-13c02830cbef
+langcode: en
+status: true
+dependencies: {  }
+id: hi
+label: Hindi
+direction: ltr
+weight: 1
+locked: false

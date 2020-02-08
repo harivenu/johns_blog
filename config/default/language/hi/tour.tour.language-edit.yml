@@ -1,0 +1,7 @@
+tips:
+  language-edit-langcode:
+    label: 'भाषा कोड'
+  language-edit-label:
+    label: 'भाषा नाम'
+  language-edit-direction:
+    label: 'भाषा की दिशा'

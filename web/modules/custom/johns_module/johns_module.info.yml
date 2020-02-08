@@ -1,0 +1,5 @@
+name: 'Johns Module'
+type: module
+description: 'Custom module for johns blog'
+core: 8.x
+package: 'Custom'

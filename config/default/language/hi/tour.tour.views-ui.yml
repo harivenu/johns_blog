@@ -1,0 +1,11 @@
+tips:
+  views-ui-fields:
+    label: क्षेत्र
+  views-ui-filter-operations:
+    label: 'फ़िल्टर क्रिया'
+  views-ui-sorts:
+    label: 'क्रमबद्ध मानदंड'
+  views-ui-sorts-operations:
+    label: 'क्रमबद्ध कार्रवाई'
+  views-ui-preview:
+    label: पूर्वावलोकन

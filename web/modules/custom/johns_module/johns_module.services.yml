@@ -1,0 +1,5 @@
+services:
+  johns_blog.event_subscriber:
+    class: Drupal\johns_module\EventSubscriber\CountryRedirectionSubscriber
+    tags:
+      - {name: event_subscriber}
