@@ -2,11 +2,7 @@
 
 namespace Drupal\johns_module\EventSubscriber;
 
-use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Session\SessionManagerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Drupal\Core\Routing\TrustedRedirectResponse;
@@ -24,8 +20,6 @@ class CountryRedirectionSubscriber implements EventSubscriberInterface {
   
     global $base_url;
     $ip = $event->getRequest()->getClientIp();
-
-    $ip = '51.158.123.7';
 
     if(filter_var($ip, FILTER_VALIDATE_IP) && ($ip != '::1' || $ip != '127.0.0.1')) {
       // Use JSON encoded string and converts 
