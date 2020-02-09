@@ -1,0 +1,21 @@
+uuid: a86ff9ef-683c-4eb2-ada7-5f8d9eb93749
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_tags
+    - node.type.article
+  module:
+    - options
+id: node.article.field_related_tags
+field_name: field_related_tags
+entity_type: node
+bundle: article
+label: 'Related Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

@@ -24,6 +24,14 @@ class CountryRedirectionSubscriber implements EventSubscriberInterface {
     if(filter_var($ip, FILTER_VALIDATE_IP) && ($ip != '::1' || $ip != '127.0.0.1') && \Drupal::service('path.matcher')->isFrontPage()) {
       // Use JSON encoded string and converts 
       // it into a PHP variable 
+
+      // For India
+      // $ip = '45.121.31.79';
+
+      // For Pakistan
+      //$ip = '125.209.127.30'; 
+
+
       $ipdat = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip));
       $lc = \Drupal::languageManager()->getCurrentLanguage()->getId();
       if($ipdat->geoplugin_countryCode == 'IN' && $lc != 'hi') {

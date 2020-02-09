@@ -1,0 +1,33 @@
+uuid: d2e6f790-0806-4280-a2fb-ce4b2eb4a6ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.most_popular_content
+  module:
+    - node
+    - views
+  theme:
+    - bartik
+id: views_block__most_popular_content_block_1
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:most_popular_content-block_1'
+settings:
+  id: 'views_block:most_popular_content-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      landing_page: landing_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

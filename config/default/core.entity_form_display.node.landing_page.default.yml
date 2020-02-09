@@ -1,0 +1,29 @@
+uuid: 5df065e6-011e-4167-8d6b-fa57bdd4e8e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing_page.body
+    - node.type.landing_page
+id: node.landing_page.default
+targetEntityType: node
+bundle: landing_page
+mode: default
+content:
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

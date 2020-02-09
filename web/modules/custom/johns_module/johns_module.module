@@ -1,2 +1,26 @@
 <?php
 
+  /**
+   * Implements hook_views_pre_view().
+   */
+  function johns_module_views_pre_view(&$view) {
+    if($view->id() == 'most_popular_content' && $view->current_display == 'page_1' || $view->id() == 'most_popular_content' && $view->current_display == 'block_1'){
+        $filters = $view->display_handler->getOption('filters');
+        if ($filters['field_related_tags_value']) {
+          foreach ($filters['field_related_tags_value']['value'] as $key => $filter) {
+              
+              // Country identified from language code because use can't switch language.
+              $lc = \Drupal::languageManager()->getCurrentLanguage()->getId();
+              // Indian nodes with from any language. 
+              if ($key == 2 && $lc == 'hi') {
+                unset($filters['field_related_tags_value']['value'][$key]);
+              }
+              // Pakistan nodes with from any language. 
+              if ($key == 1 && $lc == 'ur') {
+                unset($filters['field_related_tags_value']['value'][$key]);
+              }
+       }
+    }
+    $view->display_handler->overrideOption('filters', $filters);
+    }
+  }
