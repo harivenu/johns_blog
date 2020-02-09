@@ -11,13 +11,20 @@
               
               // Country identified from language code because use can't switch language.
               $lc = \Drupal::languageManager()->getCurrentLanguage()->getId();
+              
               // Indian nodes with from any language. 
               if ($key == 2 && $lc == 'hi') {
                 unset($filters['field_related_tags_value']['value'][$key]);
               }
+              
               // Pakistan nodes with from any language. 
               if ($key == 1 && $lc == 'ur') {
                 unset($filters['field_related_tags_value']['value'][$key]);
+              }
+
+              // Anywhere
+              if ($lc == 'en') {
+                  unset($filters['field_related_tags_value']['value'][$key]);
               }
        }
     }
